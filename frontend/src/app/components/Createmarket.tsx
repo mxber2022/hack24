@@ -1,5 +1,9 @@
 "use client"
 import { useState } from 'react';
+import { useWriteContract } from 'wagmi'
+import { abi } from '../../abi'
+import myconfig from '../../myconfig.json'
+import { Address } from 'viem';
 
 function Createmarket() {
     
@@ -21,9 +25,21 @@ function Createmarket() {
     };
         
     // Handler to create market
+
+    const { writeContract } = useWriteContract()
+
     //@ts-ignore
     const createMarket = async (event) => {
         event.preventDefault();
+        writeContract({ 
+            abi,
+            address: myconfig.CONTRACT_ADDRESS_BASE as Address,
+            functionName: 'createMarket',
+            args: [
+                question,
+                outcomes
+            ],
+         })
     };
     
     return (
@@ -58,6 +74,6 @@ function Createmarket() {
             {status && <p>{status}</p>}
         </div>
           );
-        }
+}
 
 export default Createmarket;
