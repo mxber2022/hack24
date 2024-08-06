@@ -1,7 +1,12 @@
 "use client";
 
-import React from 'react';
+import React, { useCallback } from 'react';
 import { useQuery, gql } from '@apollo/client';
+import { useWriteContract } from 'wagmi';
+import { abi } from '../../abi';
+import myconfig from '../../myconfig.json';
+import { Address } from 'viem';
+import { parseEther } from 'viem';
 
 const MY_QUERY = gql`
   query MyQuery {
@@ -25,13 +30,23 @@ interface MyQueryData {
 
 function GetmarketList() {
   const { loading, error, data } = useQuery<MyQueryData>(MY_QUERY);
+  const { writeContract } = useWriteContract();
+
+  const handleButtonClick = useCallback(
+    async (marketId: string, outcome: string) => {
+      writeContract({
+        abi,
+        address: myconfig.CONTRACT_ADDRESS_BASE as Address,
+        functionName: 'placeBet',
+        args: [marketId, outcome],
+        value: parseEther('0.0001')
+      });
+    },
+    [writeContract]
+  );
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error :(</p>;
-
-  const handleButtonClick = (marketId: string, outcome: string) => {
-    console.log(`Market ID: ${marketId}, Outcome: ${outcome}`);
-  };
 
   return (
     <div>
