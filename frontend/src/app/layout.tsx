@@ -6,6 +6,11 @@ import { cookieToInitialState } from 'wagmi'
 
 import { config } from '@/config'
 import Web3ModalProvider from '@/context'
+import ApolloProviderWrapper from './lib/ApolloProviderWrapper'
+import { ApolloProvider } from '@apollo/client';
+/*
+  Apollo client
+*/
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -21,7 +26,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Web3ModalProvider initialState={initialState}>{children}</Web3ModalProvider>
+        <ApolloProviderWrapper>
+          <Web3ModalProvider initialState={initialState}>{children}</Web3ModalProvider>
+        </ApolloProviderWrapper>
       </body>
     </html>
   )
