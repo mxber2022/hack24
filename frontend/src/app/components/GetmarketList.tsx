@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import React from 'react';
 import { useQuery, gql } from '@apollo/client';
@@ -29,6 +29,10 @@ function GetmarketList() {
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error :(</p>;
 
+  const handleButtonClick = (marketId: string, outcome: string) => {
+    console.log(`Market ID: ${marketId}, Outcome: ${outcome}`);
+  };
+
   return (
     <div>
       {data?.marketCreateds.map((market) => (
@@ -36,7 +40,9 @@ function GetmarketList() {
           <h3>{market.question}</h3>
           <div>
             {market.outcomes.split(',').map((outcome, index) => (
-              <button key={index}>{outcome}</button>
+              <button key={index} onClick={() => handleButtonClick(market.marketId, outcome)}>
+                {outcome}
+              </button>
             ))}
           </div>
         </div>
