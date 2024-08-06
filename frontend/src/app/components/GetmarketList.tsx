@@ -34,7 +34,11 @@ function GetmarketList() {
       {data?.marketCreateds.map((market) => (
         <div key={market.marketId}>
           <h3>{market.question}</h3>
-          <p>Outcomes: {market.outcomes.split(',').join(', ')}</p>
+          <div>
+            {market.outcomes.split(',').map((outcome, index) => (
+              <button key={index}>{outcome}</button>
+            ))}
+          </div>
         </div>
       ))}
     </div>
