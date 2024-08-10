@@ -11,7 +11,7 @@ function Nav() {
                         {/* <img src="" alt="" /> */}
                     </div>
                     <div className="nav__search">
-                        <input type="text" typeof="search" placeholder="Search..." />
+                        <input type="text" typeof="search" placeholder="Search markets ..." />
                     </div>
                 </div>
                 <div className="nav__right">
