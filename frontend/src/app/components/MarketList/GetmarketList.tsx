@@ -94,7 +94,6 @@ function GetmarketList() {
               ))}
             </div>
             
-            {/* <button onClick={() => GetMarketStatus(parseInt(market.marketId))}>marketdata</button>  */}
             <GetMarketStatus marketId={Number(market.marketId)} />
           </div>
           ))}
