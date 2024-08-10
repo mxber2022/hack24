@@ -1,7 +1,7 @@
 import { ApolloClient, InMemoryCache } from '@apollo/client';
 
 const apolloclient = new ApolloClient({
-  uri: 'https://api.goldsky.com/api/public/project_clzhsxd1aulmx01zzbhjb8f9y/subgraphs/PariMutuelBetting-base-sepolia/1.0/gn',
+  uri: 'https://api.goldsky.com/api/public/project_clzhsxd1aulmx01zzbhjb8f9y/subgraphs/name-mode-testnet/version/gn',
   cache: new InMemoryCache(),
 });
 
