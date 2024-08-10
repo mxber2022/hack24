@@ -10,6 +10,7 @@ import { parseEther } from 'viem';
 import "./MarketList.css";
 import { useState } from 'react';
 import Image from "next/image";
+import GetMarketStatus from './GetMarketStatus';
 
 const MY_QUERY = gql`
   query MyQuery {
@@ -52,8 +53,8 @@ function GetmarketList() {
     [writeContract]
   );
 
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error :(</p>;
+  if (loading) return <h3>Loading...</h3>;
+  if (error) return <h3>Error :(</h3>;
 
   return (
     <section className='marketList'>
@@ -92,6 +93,9 @@ function GetmarketList() {
                 </button>
               ))}
             </div>
+            
+            {/* <button onClick={() => GetMarketStatus(parseInt(market.marketId))}>marketdata</button>  */}
+            <GetMarketStatus marketId={Number(market.marketId)} />
           </div>
           ))}
         </div>
