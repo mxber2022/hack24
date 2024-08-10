@@ -1,9 +1,10 @@
 "use client"
 import { useState } from 'react';
 import { useWriteContract } from 'wagmi'
-import { abi } from '../../abi'
-import myconfig from '../../myconfig.json'
+import { abi } from '../../../abi'
+import myconfig from '../../../myconfig.json'
 import { Address } from 'viem';
+import "./CreateMarket.css";
 
 function Createmarket() {
     
@@ -43,36 +44,38 @@ function Createmarket() {
     };
     
     return (
-        <div>
-            <h1>Create Market</h1>
-            <form onSubmit={createMarket}>
-                <div>
-                  <label>Market Question:</label>
-                  <input
-                    type="text"
-                    value={question}
-                    onChange={(e) => setQuestion(e.target.value)}
-                    required
-                  />
-                </div>
-
-                <div>
-                  <label>Outcomes:</label>
-                  {outcomes.map((outcome, index) => (
+        <section className='createMarket'>
+          <div className='createMarket__container'>
+            <h2>Create Market</h2>
+              <form onSubmit={createMarket}>
+                  <div>
+                    <label>Market Question:</label>
                     <input
-                      key={index}
                       type="text"
-                      value={outcome}
-                      onChange={(e) => handleOutcomeChange(index, e)}
+                      value={question}
+                      onChange={(e) => setQuestion(e.target.value)}
                       required
                     />
-                    ))}
-                    <button type="button" onClick={addOutcome}> Add Outcome </button>
-                </div>
-                <button type="submit">Create Market</button>
-            </form>
-            {status && <p>{status}</p>}
-        </div>
+                  </div>
+
+                  <div>
+                    <label>Outcomes:</label>
+                    {outcomes.map((outcome, index) => (
+                      <input
+                        key={index}
+                        type="text"
+                        value={outcome}
+                        onChange={(e) => handleOutcomeChange(index, e)}
+                        required
+                      />
+                      ))}
+                      <button type="button" onClick={addOutcome}> Add Outcome </button>
+                  </div>
+                  <button type="submit">Create Market</button>
+              </form>
+              {status && <p>{status}</p>}
+          </div>
+        </section>
           );
 }
 

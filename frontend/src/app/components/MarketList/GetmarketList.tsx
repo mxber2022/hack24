@@ -3,10 +3,11 @@
 import React, { useCallback } from 'react';
 import { useQuery, gql } from '@apollo/client';
 import { useWriteContract } from 'wagmi';
-import { abi } from '../../abi';
-import myconfig from '../../myconfig.json';
+import { abi } from '../../../abi';
+import myconfig from '../../../myconfig.json';
 import { Address } from 'viem';
 import { parseEther } from 'viem';
+import "./MarketList.css";
 
 const MY_QUERY = gql`
   query MyQuery {
@@ -49,20 +50,25 @@ function GetmarketList() {
   if (error) return <p>Error :(</p>;
 
   return (
-    <div>
-      {data?.marketCreateds.map((market) => (
-        <div key={market.marketId}>
-          <h3>{market.question}</h3>
-          <div>
-            {market.outcomes.split(',').map((outcome, index) => (
-              <button key={index} onClick={() => handleButtonClick(market.marketId, outcome)}>
-                {outcome}
-              </button>
-            ))}
+    <section className='marketList'>
+      <div className='marketList__container'>
+        <h2>Market List</h2>
+        <div className='marketList__grid'>
+          {data?.marketCreateds.map((market) => (
+          <div key={market.marketId} className='marketList__card'>
+            <h3>{market.question}</h3>
+            <div className='marketList__cardBtns'>
+              {market.outcomes.split(',').map((outcome, index) => (
+                <button key={index} onClick={() => handleButtonClick(market.marketId, outcome)}>
+                  {outcome}
+                </button>
+              ))}
+            </div>
           </div>
+          ))}
         </div>
-      ))}
-    </div>
+      </div>
+    </section>
   );
 }
 
