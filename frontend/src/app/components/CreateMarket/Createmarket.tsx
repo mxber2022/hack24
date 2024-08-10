@@ -9,6 +9,7 @@ import "./CreateMarket.css";
 function Createmarket() {
     
     const [question, setQuestion] = useState('');
+    const [uri, setUri] = useState('');
     const [outcomes, setOutcomes] = useState(['']);
     const [status, setStatus] = useState('');
         
@@ -41,10 +42,11 @@ function Createmarket() {
         writeContract({ 
             abi,
             address: myconfig.CONTRACT_ADDRESS_BASE as Address,
-            functionName: 'createMarket',
+            functionName: 'createMarket', 
             args: [
                 question,
-                outcomes
+                outcomes,
+                uri
             ],
          })
     };
@@ -60,6 +62,16 @@ function Createmarket() {
                       type="text"
                       value={question}
                       onChange={(e) => setQuestion(e.target.value)}
+                      required
+                    />
+                  </div>
+
+                  <div>
+                    <label>Market ImageUri:</label>
+                    <input
+                      type="text"
+                      value={uri}
+                      onChange={(e) => setUri(e.target.value)}
                       required
                     />
                   </div>

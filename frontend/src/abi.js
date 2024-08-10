@@ -1,6 +1,11 @@
 module.exports = {
   "abi": [
     {
+      "inputs": [],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
       "anonymous": false,
       "inputs": [
         {
@@ -17,9 +22,9 @@ module.exports = {
         },
         {
           "indexed": false,
-          "internalType": "string",
-          "name": "outcome",
-          "type": "string"
+          "internalType": "uint256",
+          "name": "outcomeIndex",
+          "type": "uint256"
         },
         {
           "indexed": false,
@@ -51,6 +56,12 @@ module.exports = {
           "internalType": "string[]",
           "name": "outcomes",
           "type": "string[]"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "imageUri",
+          "type": "string"
         }
       ],
       "name": "MarketCreated",
@@ -67,9 +78,9 @@ module.exports = {
         },
         {
           "indexed": false,
-          "internalType": "string",
-          "name": "winningOutcome",
-          "type": "string"
+          "internalType": "uint256",
+          "name": "winningOutcomeIndex",
+          "type": "uint256"
         }
       ],
       "name": "MarketResolved",
@@ -111,6 +122,11 @@ module.exports = {
           "internalType": "string[]",
           "name": "outcomes",
           "type": "string[]"
+        },
+        {
+          "internalType": "string",
+          "name": "imageUri",
+          "type": "string"
         }
       ],
       "name": "createMarket",
@@ -139,14 +155,19 @@ module.exports = {
           "type": "string[]"
         },
         {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        },
+        {
           "internalType": "bool",
           "name": "",
           "type": "bool"
         },
         {
-          "internalType": "string",
+          "internalType": "uint256",
           "name": "",
-          "type": "string"
+          "type": "uint256"
         },
         {
           "internalType": "uint256",
@@ -165,12 +186,31 @@ module.exports = {
           "type": "uint256"
         },
         {
-          "internalType": "string",
-          "name": "outcome",
-          "type": "string"
+          "internalType": "uint256",
+          "name": "outcomeIndex",
+          "type": "uint256"
         }
       ],
       "name": "getUserBet",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "marketId",
+          "type": "uint256"
+        }
+      ],
+      "name": "getUserWinningAmount",
       "outputs": [
         {
           "internalType": "uint256",
@@ -210,6 +250,11 @@ module.exports = {
           "type": "string"
         },
         {
+          "internalType": "string",
+          "name": "imageUri",
+          "type": "string"
+        },
+        {
           "internalType": "uint256",
           "name": "totalPool",
           "type": "uint256"
@@ -220,9 +265,22 @@ module.exports = {
           "type": "bool"
         },
         {
-          "internalType": "string",
-          "name": "winningOutcome",
-          "type": "string"
+          "internalType": "uint256",
+          "name": "winningOutcomeIndex",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
         }
       ],
       "stateMutability": "view",
@@ -236,9 +294,9 @@ module.exports = {
           "type": "uint256"
         },
         {
-          "internalType": "string",
-          "name": "outcome",
-          "type": "string"
+          "internalType": "uint256",
+          "name": "outcomeIndex",
+          "type": "uint256"
         }
       ],
       "name": "placeBet",
@@ -254,9 +312,9 @@ module.exports = {
           "type": "uint256"
         },
         {
-          "internalType": "string",
-          "name": "winningOutcome",
-          "type": "string"
+          "internalType": "uint256",
+          "name": "winningOutcomeIndex",
+          "type": "uint256"
         }
       ],
       "name": "resolveMarket",
