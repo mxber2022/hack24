@@ -11,6 +11,8 @@ import "./MarketList.css";
 import { useState } from 'react';
 import Image from "next/image";
 import GetMarketStatus from './GetMarketStatus';
+import { waitForTransactionReceipt } from '@wagmi/core'
+import { config } from './config'
 
 const MY_QUERY = gql`
   query MyQuery {
@@ -36,7 +38,7 @@ interface MyQueryData {
 
 function GetmarketList() {
   const { loading, error, data } = useQuery<MyQueryData>(MY_QUERY);
-  const { writeContract } = useWriteContract();
+  const { writeContract, isSuccess, data: writeContractData, status} = useWriteContract();
   const [amount, setAmount] = useState('');
 
   const handleButtonClick = useCallback(
@@ -52,6 +54,18 @@ function GetmarketList() {
     },
     [writeContract]
   );
+
+  console.log("isSuccess: ", isSuccess)
+  console.log("writeContractData: ", writeContractData)
+  console.log("status", status)
+
+  // const transactionReceipt = async() => await  waitForTransactionReceipt( config,{ 
+  //   confirmations: 10, 
+  //   //@ts-ignore
+  //   hash: writeContractData ,
+  // })
+
+  //console.log("result: ", transactionReceipt)
 
   if (loading) return <h3>Loading...</h3>;
   if (error) return <h3>Error :(</h3>;
@@ -93,7 +107,7 @@ function GetmarketList() {
                 </button>
               ))}
             </div>
-            
+
             <GetMarketStatus marketId={Number(market.marketId)} />
           </div>
           ))}
