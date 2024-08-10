@@ -62,7 +62,7 @@ function GetmarketList() {
         <div className='marketList__grid'>
           {data?.marketCreateds.map((market) => (
           <div key={market.marketId} className='marketList__card'>
-            <Image src={market.imageUri} alt="Market Image" unoptimized width={200} height={200} />
+            <img src="https://github.com/mxber2022/superhack24/blob/main/frontend/public/bitcoin.jpg" alt="Market Image" width={200} height={200} />
             <h3 className="market-question">{market.question}</h3>
             
             <div className='betAmount'>
