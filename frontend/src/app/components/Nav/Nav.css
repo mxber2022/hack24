@@ -143,7 +143,7 @@ wui-connect-button button {
 }
 
 .nav__search input:focus {
-    background-color: #1d3557; /* Deep blue background on focus */
+    background-color: #080a0c; /* Deep blue background on focus */
     color: #f1faee;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     border-color: #e63946; /* Red border on focus */

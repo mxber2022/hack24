@@ -16,6 +16,12 @@ function Createmarket() {
     const addOutcome = () => {
         setOutcomes([...outcomes, '']);
     };
+
+    // Handler to remove an outcome input field
+    const removeOutcome = (index: any) => {
+        const newOutcomes = outcomes.filter((_, i) => i !== index);
+        setOutcomes(newOutcomes);
+    };
         
     // Handler to update outcome value
     //@ts-ignore
@@ -61,15 +67,21 @@ function Createmarket() {
                   <div>
                     <label>Outcomes:</label>
                     {outcomes.map((outcome, index) => (
-                      <input
-                        key={index}
-                        type="text"
-                        value={outcome}
-                        onChange={(e) => handleOutcomeChange(index, e)}
-                        required
-                      />
-                      ))}
-                      <button type="button" onClick={addOutcome}> Add Outcome </button>
+                      <div key={index} className="outcome-input">
+                        <input
+                          type="text"
+                          value={outcome}
+                          onChange={(e) => handleOutcomeChange(index, e)}
+                          required
+                        />
+                        {outcomes.length > 1 && (
+                          <div>
+                          <button className="btremove" type="button" onClick={() => removeOutcome(index)}> Remove </button>
+                          </div>
+                        )}
+                      </div>
+                    ))}
+                    <button className='btnright' type="button" onClick={addOutcome}> Add Outcome </button>
                   </div>
                   <button type="submit">Create Market</button>
               </form>

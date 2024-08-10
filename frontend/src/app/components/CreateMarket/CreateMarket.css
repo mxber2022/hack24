@@ -85,3 +85,15 @@
         padding: 0 1rem;
     }
 }
+
+.outcome-input {
+    display: flex;
+}
+
+.btremove{
+    margin-left: 20px;
+}
+
+.btnright{
+    float: right;
+}
