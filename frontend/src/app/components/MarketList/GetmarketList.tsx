@@ -12,7 +12,9 @@ import { useState } from 'react';
 import Image from "next/image";
 import GetMarketStatus from './GetMarketStatus';
 import { waitForTransactionReceipt } from '@wagmi/core'
-import { config } from './config'
+import { config } from './config';
+import ProccingGif from './Assets/proccing.webp';
+import CheckGif from './Assets/check.gif';
 
 const MY_QUERY = gql`
   query MyQuery {
@@ -70,6 +72,11 @@ function GetmarketList() {
   if (loading) return <h3>Loading...</h3>;
   if (error) return <h3>Error :(</h3>;
 
+    const handleRefresh = (e) => {
+      e.preventDefault(); // Prevent default anchor behavior
+      window.location.reload(); // Refresh the page
+    };
+
   return (
     <section className='marketList'>
       <div className='marketList__container'>
@@ -87,7 +94,7 @@ function GetmarketList() {
               </div>
             </div>
 
-            <div className='betAmount'>
+            <div className='betAmount betAmount-top'>
               <div>
                 <h3>Amount</h3>
               </div>
@@ -108,10 +115,38 @@ function GetmarketList() {
               ))}
             </div>
 
-            <GetMarketStatus marketId={Number(market.marketId)} />
+            <div className='amount-bottom'>
+              <GetMarketStatus marketId={Number(market.marketId)} />
+            </div>
           </div>
           ))}
         </div>
+      </div>
+      <div className={`proccing ${status === 'pending' ? 'pending' : status === 'success' ? 'done' : ''}`}>
+            {status === 'pending' && (
+              <div className='pending_popup'>
+                <Image
+                  src={ProccingGif}
+                  alt="Processing GIF"
+                />
+                <p>
+                  Don't close the window
+                </p>
+              </div>
+            )}
+
+              {status === 'success' && (
+                <div className='success_popup'>
+                  <Image
+                    src={CheckGif}
+                    alt="CheckGif"
+                  />
+                  <p>
+                    Success <br /><br />
+                    <a href="#" onClick={handleRefresh}>Close and return to the website</a>
+                  </p>
+                </div>
+              )}
       </div>
     </section>
   );
