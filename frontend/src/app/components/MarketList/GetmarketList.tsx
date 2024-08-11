@@ -13,8 +13,7 @@ import Image from "next/image";
 import GetMarketStatus from './GetMarketStatus';
 import { waitForTransactionReceipt } from '@wagmi/core'
 import { config } from './config';
-import ProccingGif from './Assets/proccing.webp';
-import CheckGif from './Assets/check.gif';
+import TransactionStatus from '../TransactionStatus/TransactionStatus';
 
 const MY_QUERY = gql`
   query MyQuery {
@@ -72,11 +71,6 @@ function GetmarketList() {
   if (loading) return <h3>Loading...</h3>;
   if (error) return <h3>Error :(</h3>;
 
-    const handleRefresh = (e: any) => {
-      e.preventDefault(); // Prevent default anchor behavior
-      window.location.reload(); // Refresh the page
-    };
-
   return (
     <section className='marketList'>
       <div className='marketList__container'>
@@ -122,36 +116,17 @@ function GetmarketList() {
           ))}
         </div>
       </div>
-      <div className={`proccing ${status === 'pending' ? 'pending' : status === 'success' ? 'done' : ''}`}>
-            {status === 'pending' && (
-              <div className='pending_popup'>
-                <Image
-                  src={ProccingGif}
-                  alt="Processing GIF"
-                />
-                <p>
-                  Don't close the window
-                </p>
-              </div>
-            )}
+      
+      <TransactionStatus status={status} />
 
-              {status === 'success' && (
-                <div className='success_popup'>
-                  <Image
-                    src={CheckGif}
-                    alt="CheckGif"
-                  />
-                  <p>
-                    Success <br /><br />
-                    {/* <p>{writeContractData}</p> */}
-                    <a href="#" onClick={handleRefresh}>Close and return to the website</a>
-                  </p>
-                </div>
-              )}
-      </div>
     </section>
   );
 }
 
 export default GetmarketList;
  
+
+
+
+
+
