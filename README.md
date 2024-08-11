@@ -113,7 +113,7 @@ To run the **BetBazaar** Next.js project locally, follow these steps:
    Ensure you have [Node.js](https://nodejs.org/) installed. Then run:
 
    ```bash
-   npm install
+   yarn
    ```
 
 4. **Set Up Environment Variables:**
@@ -123,7 +123,7 @@ To run the **BetBazaar** Next.js project locally, follow these steps:
 5. **Run the Development Server:**
 
    ```bash
-   npm run dev
+   yarn dev
    ```
 
    This will start the development server. Open [http://localhost:3000](http://localhost:3000) in your browser to view the application.
@@ -133,13 +133,13 @@ To run the **BetBazaar** Next.js project locally, follow these steps:
    To build the project for production, run:
 
    ```bash
-   npm run build
+   yarn build
    ```
 
    After building, you can start the production server with:
 
    ```bash
-   npm start
+   yarn dev
    ```
 
 ## Contributing
