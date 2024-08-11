@@ -143,6 +143,7 @@ function GetmarketList() {
                   />
                   <p>
                     Success <br /><br />
+                    {/* <p>{writeContractData}</p> */}
                     <a href="#" onClick={handleRefresh}>Close and return to the website</a>
                   </p>
                 </div>

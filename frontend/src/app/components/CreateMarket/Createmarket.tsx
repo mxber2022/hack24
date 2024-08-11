@@ -5,6 +5,9 @@ import { abi } from '../../../abi'
 import myconfig from '../../../myconfig.json'
 import { Address } from 'viem';
 import "./CreateMarket.css";
+import ProccingGif from './Assets/proccing.webp';
+import CheckGif from './Assets/check.gif';
+import Image from "next/image";
 
 function Createmarket() {
     
@@ -34,7 +37,7 @@ function Createmarket() {
         
     // Handler to create market
 
-    const { writeContract } = useWriteContract()
+    const { writeContract, isSuccess, data: writeContractData, status: writeContractStatus } = useWriteContract()
 
     //@ts-ignore
     const createMarket = async (event) => {
@@ -50,6 +53,13 @@ function Createmarket() {
             ],
          })
     }; 
+
+
+    const handleRefresh = (e: any) => {
+      e.preventDefault(); // Prevent default anchor behavior
+      window.location.reload(); // Refresh the page
+    };
+
     
     return (
         <section className='createMarket'>
@@ -99,6 +109,34 @@ function Createmarket() {
               </form>
               {status && <p>{status}</p>}
           </div>
+
+
+          <div className={`proccing ${status === 'pending' ? 'pending' : status === 'success' ? 'done' : ''}`}>
+            {writeContractStatus === 'pending' && (
+              <div className='pending_popup'>
+                <Image
+                  src={ProccingGif}
+                  alt="Processing GIF"
+                />
+                <p>
+                  Don't close the window
+                </p>
+              </div>
+            )}
+
+              {writeContractStatus === 'success' && (
+                <div className='success_popup'>
+                  <Image
+                    src={CheckGif}
+                    alt="CheckGif"
+                  />
+                  <p>
+                    Success <br /><br />
+                    <a href="#" onClick={handleRefresh}>Close and return to the website</a>
+                  </p>
+                </div>
+              )}
+      </div>
         </section>
           );
 }
