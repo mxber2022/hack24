@@ -77,6 +77,7 @@ function Header() {
                     <ul>
                         <li><strong>Blockchain:</strong> Base, Mode</li>
                         <li><strong>GoldskySubgraph:</strong> Data provider</li>
+                        <li><strong>Blockscout:</strong> SmartContract Verification</li>
                     </ul>
                 </>
             ),
