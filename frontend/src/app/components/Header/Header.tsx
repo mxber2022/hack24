@@ -51,24 +51,24 @@ function Header() {
                         </li>
                         <li><strong>Distribute Winnings:</strong> Payout amounts are credited to the accounts of those holding winning bets.</li>
                     </ol>
-                </>
+                </> 
             ),
         },
-        {
-            title: "Platform Features",
-            content: (
-                <>
-                    <h2>Platform Features</h2>
-                    <ul>
-                        <li><strong>Decentralization:</strong> Powered by smart contracts on Ethereum, eliminating the need for intermediaries.</li>
-                        <li><strong>Transparency:</strong> All bets and market resolutions are recorded on the blockchain, ensuring fairness and visibility.</li>
-                        <li><strong>Automatic Payouts:</strong> Winnings are automatically distributed once a market is resolved.</li>
-                        <li><strong>Low Fees:</strong> Reduced operational costs due to the lack of intermediaries.</li>
-                        <li><strong>User-friendly Interface:</strong> Easy to create markets, place bets, and withdraw winnings.</li>
-                    </ul>
-                </>
-            ),
-        },
+        // {
+        //     title: "Platform Features",
+        //     content: (
+        //         <>
+        //             <h2>Platform Features</h2>
+        //             <ul>
+        //                 <li><strong>Decentralization:</strong> Powered by smart contracts on Ethereum, eliminating the need for intermediaries.</li>
+        //                 <li><strong>Transparency:</strong> All bets and market resolutions are recorded on the blockchain, ensuring fairness and visibility.</li>
+        //                 <li><strong>Automatic Payouts:</strong> Winnings are automatically distributed once a market is resolved.</li>
+        //                 <li><strong>Low Fees:</strong> Reduced operational costs due to the lack of intermediaries.</li>
+        //                 <li><strong>User-friendly Interface:</strong> Easy to create markets, place bets, and withdraw winnings.</li>
+        //             </ul>
+        //         </>
+        //     ),
+        // },
         {
             title: "Technical Architecture",
             content: (
@@ -88,8 +88,8 @@ function Header() {
                 <>
                     <h2>Market Potential</h2>
                     <ul>
-                        <li><strong>Industry Size:</strong> Provide data on the global betting market, emphasizing the growing trend towards online and decentralized betting platforms.</li>
-                        <li><strong>Target Audience:</strong> Sports bettors, eSports enthusiasts, and casual gamblers who seek transparency and fairness.</li>
+                        <li><strong>Industry Size:</strong> Predicted $500 billion by 2028</li>
+                        <li><strong>Target Audience:</strong> Crypto, Sports bettors, eSports enthusiasts, and casual gamblers who seek transparency and fairness.</li>
                         <li><strong>Competitive Advantage:</strong> Trustless environment, lower operational costs, global accessibility.</li>
                     </ul>
                 </>
@@ -122,27 +122,35 @@ function Header() {
                 </>
             ),
         },
+
         {
-            title: "Team",
+            title: "Demo",
             content: (
                 <>
-                    <h2>Team</h2>
-                    <p><strong>Core Team:</strong> Introduce the team members, their roles, and relevant experience in blockchain, software development, and the betting industry.</p>
-                    <p><strong>Advisors:</strong> Mention any advisors with expertise in blockchain, legal, or the gaming industry.</p>
+                    <h2>Demo</h2>
                 </>
             ),
         },
-        {
-            title: "Conclusion & Call to Action",
-            content: (
-                <>
-                    <h2>Conclusion & Call to Action</h2>
-                    <p><strong>Summary:</strong> Recap the platform’s unique selling points, including decentralization, transparency, and potential market impact.</p>
-                    <p><strong>Call to Action:</strong> Invite investors, partners, or collaborators to join the project. Provide contact information for follow-up discussions.</p>
-                    <p><strong>Q&A:</strong> Open the floor for any questions from the audience.</p>
-                </>
-            ),
-        },
+        // {
+        //     title: "Team",
+        //     content: (
+        //         <>
+        //             <h2>Team</h2>
+        //             <p><strong></strong>MX</p>
+        //         </>
+        //     ),
+        // },
+        // {
+        //     title: "Conclusion & Call to Action",
+        //     content: (
+        //         <>
+        //             <h2>Conclusion & Call to Action</h2>
+        //             <p><strong>Summary:</strong> Recap the platform’s unique selling points, including decentralization, transparency, and potential market impact.</p>
+        //             <p><strong>Call to Action:</strong> Invite investors, partners, or collaborators to join the project. Provide contact information for follow-up discussions.</p>
+        //             <p><strong>Q&A:</strong> Open the floor for any questions from the audience.</p>
+        //         </>
+        //     ),
+        // },
     ];
 
     const nextSlide = () => {
