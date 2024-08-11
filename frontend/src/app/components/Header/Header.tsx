@@ -75,9 +75,8 @@ function Header() {
                 <>
                     <h2>Technical Architecture</h2>
                     <ul>
-                        <li><strong>Smart Contracts:</strong> Discuss core functionalities like market creation, bet placement, market resolution, and winnings distribution.</li>
-                        <li><strong>Security Considerations:</strong> Use of re-entrancy guard techniques, decentralized and trustless environment, transparent and immutable records.</li>
-                        <li><strong>Scalability:</strong> Potential for scaling on Layer 2 solutions or other blockchain platforms.</li>
+                        <li><strong>Blockchain:</strong> Base, Mode</li>
+                        <li><strong>GoldskySubgraph:</strong> Data provider</li>
                     </ul>
                 </>
             ),
@@ -109,15 +108,15 @@ function Header() {
             ),
         },
         {
-            title: "Roadmap",
+            title: "Upcoming",
             content: (
                 <>
-                    <h2>Roadmap</h2>
+                    <h2>Upcoming Fetures</h2>
                     <ul>
-                        <li><strong>Phase 1:</strong> MVP Development - Launch the core platform with basic market creation and betting functionality.</li>
-                        <li><strong>Phase 2:</strong> Feature Expansion - Introduce advanced features like analytics, multi-currency support, and mobile apps.</li>
+                        <li><strong>Phase 1:</strong> Going Crosschain (chainlink, layerzero, wormhole)</li>
+                        <li><strong>Phase 2:</strong> Feature Expansion - Introduce advanced features like analytics, multi crypto currency support, and mobile apps.</li>
                         <li><strong>Phase 3:</strong> Community & Partnerships - Build a strong user base and form strategic partnerships.</li>
-                        <li><strong>Phase 4:</strong> Global Scaling - Expand the platform’s reach to new markets and integrate with other blockchain ecosystems.</li>
+                        <li><strong>Phase 4:</strong> Global Scaling - Expand the platform’s reach to new markets.</li>
                     </ul>
                 </>
             ),

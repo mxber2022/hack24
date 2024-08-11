@@ -49,7 +49,7 @@ function Createmarket() {
                 uri
             ],
          })
-    };
+    }; 
     
     return (
         <section className='createMarket'>

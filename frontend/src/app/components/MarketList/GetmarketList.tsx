@@ -72,7 +72,7 @@ function GetmarketList() {
   if (loading) return <h3>Loading...</h3>;
   if (error) return <h3>Error :(</h3>;
 
-    const handleRefresh = (e) => {
+    const handleRefresh = (e: any) => {
       e.preventDefault(); // Prevent default anchor behavior
       window.location.reload(); // Refresh the page
     };
