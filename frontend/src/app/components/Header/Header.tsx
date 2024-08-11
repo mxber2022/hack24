@@ -114,7 +114,8 @@ function Header() {
                 <>
                     <h2>Upcoming Fetures</h2>
                     <ul>
-                        <li><strong>Phase 1:</strong> Going Crosschain (chainlink, layerzero, wormhole)</li>
+                        <li><strong>Phase 1:</strong> Using UMA oracle to resolve market</li>
+                        <li><strong>Phase 1.1:</strong> Going Crosschain (chainlink, layerzero, wormhole)</li>
                         <li><strong>Phase 2:</strong> Feature Expansion - Introduce advanced features like analytics, multi crypto currency support, and mobile apps.</li>
                         <li><strong>Phase 3:</strong> Community & Partnerships - Build a strong user base and form strategic partnerships.</li>
                         <li><strong>Phase 4:</strong> Global Scaling - Expand the platform’s reach to new markets.</li>
