@@ -38,7 +38,7 @@ interface MyQueryData {
 
 function GetmarketList() {
   const { loading, error, data } = useQuery<MyQueryData>(MY_QUERY);
-  const { writeContract, isSuccess, data: writeContractData, status} = useWriteContract();
+  const { writeContract, isSuccess, data: writeContractData, status} = useWriteContract(); // create market
   const [amount, setAmount] = useState('');
 
   const handleButtonClick = useCallback(
