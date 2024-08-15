@@ -1,4 +1,28 @@
-type Greeting @entity {
-    id: ID!
-    currentGreeting: String!
+type MarketCreated @entity {
+  id: ID!
+  marketId: String!
+  question: String!
+  outcomes: [String!]!  # Ensure to use a list of strings for outcomes
+  imageUri: String!
+}
+
+type BetPlaced @entity {
+  id: ID!
+  marketId: String!
+  user: Bytes!
+  outcomeIndex: String!  # Change this to BigInt
+  amount: String!  # Change this to BigInt
+}
+
+type MarketResolved @entity {
+  id: ID!
+  marketId: String!
+  winningOutcomeIndex: String!  # Change this to BigInt
+}
+
+type WinningsWithdrawn @entity {
+  id: ID!
+  marketId: String!
+  user: Bytes!
+  amount: String!  # Change this to String
 }

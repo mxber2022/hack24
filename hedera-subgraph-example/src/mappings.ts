@@ -1,39 +1,42 @@
-/*
- * Hedera Subgraph Example
- *
- * Copyright (C) 2021 - 2022 Hedera Hashgraph, LLC
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *    http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- *
- */
+import { MarketCreated, BetPlaced, MarketResolved, WinningsWithdrawn } from "../generated/PariMutuelBetting/IPariMutuelBetting";
+import { MarketCreated as MarketCreatedEntity, BetPlaced as BetPlacedEntity, MarketResolved as MarketResolvedEntity, WinningsWithdrawn as WinningsWithdrawnEntity } from "../generated/schema";
 
-import { GreetingSet} from '../generated/Greeter/IGreeter';
-import {Greeting} from "../generated/schema";
+export function handleMarketCreated(event: MarketCreated): void {
+  let entity = new MarketCreatedEntity(event.params.marketId.toString());
+  entity.marketId = event.params.marketId.toString(); // Convert BigInt to String
+  entity.question = event.params.question;
 
-export function handleGreetingSet(event: GreetingSet): void {
-	// Entities can be loaded from the store using a string ID; this ID
-	// needs to be unique across all entities of the same type
-	let entity = Greeting.load(event.transaction.hash.toHexString());
+  // Convert each outcome to String
+  let outcomes: Array<string> = [];
+  for (let i = 0; i < event.params.outcomes.length; i++) {
+    outcomes.push(event.params.outcomes[i].toString());
+  }
+  entity.outcomes = outcomes;
 
-	// Entities only exist after they have been saved to the store;
-	// `null` checks allow to create entities on demand
-	if (!entity) {
-		entity = new Greeting(event.transaction.hash.toHex());
-	}
+  entity.imageUri = event.params.imageUri;
+  entity.save();
+}
 
-	// Entity fields can be set based on event parameters
-	entity.currentGreeting = event.params._greeting;
+export function handleBetPlaced(event: BetPlaced): void {
+  let entity = new BetPlacedEntity(event.transaction.hash.toHex() + "-" + event.logIndex.toString());
+  entity.marketId = event.params.marketId.toString(); // Convert BigInt to String
+  entity.user = event.params.user; // Convert address to String
+  entity.outcomeIndex = event.params.outcomeIndex.toString(); // Convert BigInt to String
+  entity.amount = event.params.amount.toString(); // Convert BigInt to String
+  entity.save();
+}
 
-	// Entities can be written to the store with `.save()`
-	entity.save();
+export function handleMarketResolved(event: MarketResolved): void {
+  let entity = new MarketResolvedEntity(event.transaction.hash.toHex() + "-" + event.logIndex.toString());
+  entity.marketId = event.params.marketId.toString(); // Convert BigInt to String
+  entity.winningOutcomeIndex = event.params.winningOutcomeIndex.toString(); // Convert BigInt to String
+  entity.save();
+}
+
+export function handleWinningsWithdrawn(event: WinningsWithdrawn): void {
+  let entity = new WinningsWithdrawnEntity(event.transaction.hash.toHex() + "-" + event.logIndex.toString());
+  entity.marketId = event.params.marketId.toString(); // Convert BigInt to String
+  entity.user = event.params.user; // Convert address to String
+  entity.amount = event.params.amount.toString(); // Convert BigInt to String
+  entity.save();
 }
