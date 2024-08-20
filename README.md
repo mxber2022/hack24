@@ -146,7 +146,7 @@ We welcome contributions to improve **BetBazaar**. Please refer to our [Contribu
 
 ## License
 
-**BetBazaar** is licensed under the [MIT License](LICENSE).
+**VERIDICT** is licensed under the [MIT License](LICENSE).
 
 ---
 
