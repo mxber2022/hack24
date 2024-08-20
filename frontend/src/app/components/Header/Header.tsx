@@ -7,18 +7,18 @@ function Header() {
 
     const slides = [
         {
-            title: "BetBazaar",
+            title: "VERIDICT",
             content: (
                 <>
                     <h2>Decentralized Pari-Mutuel Betting Platform</h2>
                     <p><strong>Name:</strong> MX</p>
-                    <p><strong>Date:</strong> 11.Aug 2024</p>
+                    <p><strong>Date:</strong> 20.Aug 2024</p>
                     <p><strong>Goal: </strong>Revolutionizing the Prediction Market</p>
                 </>
             ),
         },
         {
-            title: "What is BetBazaar",
+            title: "What is VERIDICT",
             content: (
                 <>
                     <h2>Introduction</h2>
@@ -75,9 +75,9 @@ function Header() {
                 <>
                     <h2>Technical Architecture</h2>
                     <ul>
-                        <li><strong>Blockchain:</strong> Base, Mode</li>
-                        <li><strong>GoldskySubgraph:</strong> Data provider</li>
-                        <li><strong>Blockscout:</strong> SmartContract Verification</li>
+                        <li><strong>Blockchain:</strong> Hedera</li>
+                        <li><strong>Subgraph:</strong> Data provider</li>
+                        {/* <li><strong>Blockscout:</strong> SmartContract Verification</li> */}
                     </ul>
                 </>
             ),
@@ -114,8 +114,8 @@ function Header() {
                 <>
                     <h2>Upcoming Fetures</h2>
                     <ul>
-                        <li><strong>Phase 1:</strong> Using UMA oracle to resolve market</li>
-                        <li><strong>Phase 1.1:</strong> Going Crosschain (chainlink, layerzero, wormhole)</li>
+                        <li><strong>Phase 1:</strong> Using oracle to resolve market</li>
+                        <li><strong>Phase 1.1:</strong> Going Crosschain (LayerZero)</li>
                         <li><strong>Phase 2:</strong> Feature Expansion - Introduce advanced features like analytics, multi crypto currency support, and mobile apps.</li>
                         <li><strong>Phase 3:</strong> Community & Partnerships - Build a strong user base and form strategic partnerships.</li>
                         <li><strong>Phase 4:</strong> Global Scaling - Expand the platform’s reach to new markets.</li>

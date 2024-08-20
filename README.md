@@ -1,15 +1,14 @@
-# BetBazaar
+# VERIDICT
 
 ## Overview
 
-**BetBazaar** is a decentralized pari-mutuel betting platform aimed at revolutionizing the prediction market. Built on blockchain technology, it offers a transparent, trustless, and efficient betting experience. This README provides an overview of the platform, its features, technical architecture, market potential, revenue model, upcoming plans, and instructions for running the Next.js project.
+**VERIDICT** is a decentralized pari-mutuel betting platform aimed at revolutionizing the prediction market. Built on blockchain technology, it offers a transparent, trustless, and efficient betting experience. This README provides an overview of the platform, its features, technical architecture, market potential, revenue model, upcoming plans, and instructions for running the Next.js project.
 
 ## Contract Addresses
 
-The smart contract for **BetBazaar** is deployed on the Mode Testnet at the following address:
+The smart contract for **BetBazaar** is deployed on the Hedera Testnet at the following address:
 
-- **Mode Testnet:** `0xe13502AC4E3503eC9bCC0623015C6A669f6AD8FD`
-- **Base Testnet:** `0xA4BC9aC0788A34b7eF85658E4dAafC8316b0AfF7`
+- **Hedera Testnet:** `0xAaa906c8C2720c50B69a5Ba54B44253Ea1001C98`
 
 ## Table of Contents
 
@@ -27,10 +26,10 @@ The smart contract for **BetBazaar** is deployed on the Mode Testnet at the foll
 
 ## Introduction
 
-**BetBazaar** is a prediction market based on a pari-mutuel algorithm, designed to provide a fair and transparent betting environment. The platform is set to transform the prediction market industry with its innovative approach.
+**VERIDICT** is a prediction market based on a pari-mutuel algorithm, designed to provide a fair and transparent betting environment. The platform is set to transform the prediction market industry with its innovative approach.
 
 - **Name:** MX
-- **Date:** 11.Aug 2024
+- **Date:** 20.Aug 2024
 - **Goal:** Revolutionizing the Prediction Market
 
 ## How Pari-Mutuel Algorithm Works
@@ -62,13 +61,12 @@ The pari-mutuel betting system pools all bets of a particular type into a single
 
 The technical infrastructure of **BetBazaar** includes:
 
-- **Blockchain:** Base, Mode
-- **GoldskySubgraph:** Data provider
-- **Blockscout:** Smart Contract Verification
+- **Blockchain:** Hedera
+- **Subgraph:** Data provider
 
 ## Market Potential
 
-**BetBazaar** is positioned to tap into a vast market:
+**VERIDICT** is positioned to tap into a vast market:
 
 - **Industry Size:** Predicted $500 billion by 2028
 - **Target Audience:** Crypto enthusiasts, sports bettors, eSports fans, and casual gamblers seeking transparency and fairness.
@@ -76,7 +74,7 @@ The technical infrastructure of **BetBazaar** includes:
 
 ## Revenue Model
 
-**BetBazaar** generates revenue through:
+**VERIDICT** generates revenue through:
 
 - **Fee Structure:** Small fees on each transaction (e.g., a percentage of the total pool).
 - **Additional Revenue Streams:** Partnerships, sponsored markets, or premium features.
@@ -84,10 +82,10 @@ The technical infrastructure of **BetBazaar** includes:
 
 ## Upcoming Features
 
-**BetBazaar** has an exciting roadmap:
+**VERIDICT** has an exciting roadmap:
 
-- **Phase 1:** Using UMA oracle to resolve markets
-- **Phase 1.1:** Going Crosschain (Chainlink, LayerZero, Wormhole)
+- **Phase 1:** Using oracle to resolve markets
+- **Phase 1.1:** Going Crosschain (Wormhole)
 - **Phase 2:** Feature Expansion - Introducing advanced features like analytics, multi-crypto support, and mobile apps.
 - **Phase 3:** Community & Partnerships - Building a strong user base and forming strategic partnerships.
 - **Phase 4:** Global Scaling - Expanding the platform’s reach to new markets.
@@ -105,7 +103,7 @@ To run the **BetBazaar** Next.js project locally, follow these steps:
 2. **Navigate to the Project Directory:**
 
    ```bash
-   cd betbazaar
+   cd VERIDICT
    ```
 
 3. **Install Dependencies:**

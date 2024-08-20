@@ -2,7 +2,7 @@ type MarketCreated @entity {
   id: ID!
   marketId: String!
   question: String!
-  outcomes: [String!]!  # Ensure to use a list of strings for outcomes
+  outcomes: String!  # Outcomes is a single string
   imageUri: String!
 }
 
@@ -18,7 +18,7 @@ type MarketResolved @entity {
   id: ID!
   marketId: String!
   winningOutcomeIndex: String!  # Change this to BigInt
-}
+} 
 
 type WinningsWithdrawn @entity {
   id: ID!

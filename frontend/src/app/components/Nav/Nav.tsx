@@ -7,7 +7,7 @@ function Nav() {
             <div className="nav__container">
                 <div className="nav__left">
                     <div className="nav__logo">
-                        BETBAZAAR
+                        VERIDICT
                         {/* <img src="" alt="" /> */}
                     </div>
                     <div className="nav__search">

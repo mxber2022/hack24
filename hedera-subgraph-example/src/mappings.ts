@@ -1,18 +1,26 @@
 import { MarketCreated, BetPlaced, MarketResolved, WinningsWithdrawn } from "../generated/PariMutuelBetting/IPariMutuelBetting";
 import { MarketCreated as MarketCreatedEntity, BetPlaced as BetPlacedEntity, MarketResolved as MarketResolvedEntity, WinningsWithdrawn as WinningsWithdrawnEntity } from "../generated/schema";
 
+// export function handleMarketCreated(event: MarketCreated): void {
+//   let entity = new MarketCreatedEntity(event.params.marketId.toString());
+//   entity.marketId = event.params.marketId.toString(); // Convert BigInt to String
+//   entity.question = event.params.question;
+
+//   // Convert each outcome to String
+//   let outcomes: Array<string> = [];
+//   for (let i = 0; i < event.params.outcomes.length; i++) {
+//     outcomes.push(event.params.outcomes[i].toString());
+//   }
+//   entity.outcomes = outcomes;
+
+//   entity.imageUri = event.params.imageUri;
+//   entity.save();
+// }
 export function handleMarketCreated(event: MarketCreated): void {
   let entity = new MarketCreatedEntity(event.params.marketId.toString());
-  entity.marketId = event.params.marketId.toString(); // Convert BigInt to String
+  entity.marketId = event.params.marketId.toString();
   entity.question = event.params.question;
-
-  // Convert each outcome to String
-  let outcomes: Array<string> = [];
-  for (let i = 0; i < event.params.outcomes.length; i++) {
-    outcomes.push(event.params.outcomes[i].toString());
-  }
-  entity.outcomes = outcomes;
-
+  entity.outcomes = event.params.outcomes.join(","); // Convert array to a single string
   entity.imageUri = event.params.imageUri;
   entity.save();
 }

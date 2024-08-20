@@ -120,3 +120,9 @@
     flex-direction: column;
     gap: 0.6rem;
 }
+
+.thash {
+    overflow: block; /* Allows scrolling if content is too big */
+    padding: 10px; 
+    display: inline-block;
+}
